@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FRANCIS KARIUKI</title>
-  <link rel="stylesheet" href="stylesheet.css">
-</head>
-<body class="body">
-
-  <!-- Header / Navigation -->
-  <header class="head">
-    <div class="header">
-      <div class="right-section">
-        <div class="my-name">FRANCIS KARIUKI</div>
-      </div>
-
-      <!-- Mobile toggle button -->
-      <button class="mobile-toggle" aria-label="Open menu" id="mobileBtn">☰</button>
-
-      <nav class="left-section" id="navLinks">
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#skills">SKILLS</a>
-        <a href="#services">SERVICES</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#contact">CONTACTS</a>
-      </nav>
+<html>
+  <head>
+    <title>FRANCIS KARIUKI</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body class="body">
+   <header class="head">
+  <div class="header">
+    <div class="right-section">
+      <div class="my-name">FRANCIS KARIUKI</div>
     </div>
-  </header>
+
+    <!-- Mobile toggle button -->
+    <button class="mobile-toggle" aria-label="Open menu" id="mobileBtn">☰</button>
+
+    <nav class="left-section" id="navLinks">
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#services">SERVICES</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#contact">CONTACTS</a>
+    </nav>
+  </div>
+</header>
 
   <!-- Home Section -->
   <section id="home">
@@ -229,34 +226,33 @@
   </footer>
 
   <!-- Mobile Menu Script -->
-  <script>
-    const mobileBtn = document.getElementById('mobileBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    mobileBtn.onclick = () => {
-      const isOpen = navLinks.classList.toggle('active');
-      document.body.classList.toggle('menu-open', isOpen);
-    };
-
-    // Close the menu when resizing to desktop
-    window.onresize = () => {
-      if (window.innerWidth > 768) {
-        navLinks.classList.remove('active');
-        document.body.classList.remove('menu-open');
-      }
-    };
-
-    // Close menu when a link is clicked
-    document.querySelectorAll('.left-section a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        document.body.classList.remove('menu-open');
-      });
-    });
-
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+ 
 
 </body>
 </html>
+
+<script>
+  const mobileBtn = document.getElementById('mobileBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  mobileBtn.onclick = () => {
+    const isOpen = navLinks.classList.toggle('active');
+    document.body.classList.toggle('menu-open', isOpen);
+  };
+
+  // Close the menu when resizing to desktop
+  window.onresize = () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    }
+  };
+
+  // Optional: close menu when a link is clicked
+  document.querySelectorAll('.left-section a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    });
+  });
+</script>
